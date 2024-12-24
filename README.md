@@ -1,4 +1,4 @@
-# Credit Card Approval Prediction (Classification Task)
+# Credit Card Approval Prediction (Classification Project)
 ## Authors
 - [@Nouran Hassan](https://github.com/Nouran246)
 - [@Malak Mohamed](https://github.com/MalakMohameed)
