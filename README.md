@@ -1,10 +1,10 @@
 # Credit Card Approval Prediction (Classification Project)
 **Authors**
+
 - [@Nouran Hassan](https://github.com/Nouran246)
+- [@Roaa Khaled](https://github.com/Rowlkh)
 - [@Malak Mohamed](https://github.com/MalakMohameed)
 - [@Yahia-Elshobokshy](https://github.com/Yahia-Elshobokshy)
-- [@Laila Amgad](https://github.com/Laila4563)
-- [@Roaa Khaled](https://github.com/Rowlkh)
 
 **About the Dataset:**
 Credit score cards are a common risk control method in the financial industry. It uses personal information and data submitted by credit card applicants to predict the probability of future defaults and credit card borrowings. The bank is able to decide whether to issue a credit card to the applicant. Credit scores can objectively quantify the magnitude of risk.
