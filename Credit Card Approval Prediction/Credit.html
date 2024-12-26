@@ -29,9 +29,6 @@
 </style></head>
 
 
-
-
-
 <!-- $Id: $ -->
 <body class="standardForm bgTransparent pageWrapper headerStyle1 pageInside pageNavStyle1 pageTitleBar layout1 type3 fieldModel_4 footBtnCenter btnType3 mxCustomStyle matrixStyle5 noHeaderLogo pageNavScroll"><svg style=" display:none;">
 	
@@ -66,10 +63,6 @@
 	</script>
 	
 
-<input type="hidden" name="formName" id="formName" value="StudentFeedback"><input type="hidden" name="formPerma" id="formPerma" value="V0mfr9K_069ga0ZO5PkYfSYlE--K8Dh69UC6EPl5H7E"><input type="hidden" name="isPaymentForm" id="isPaymentForm" value="false"><input type="hidden" name="formType" id="formType" value="0">
-<input type="hidden" name="isDocsPublicForm" id="isDocsPublicForm" value="false"><input type="hidden" name="date_format" id="zf_date_format" value="dd-MMM-yyyy" datelocale="en-GB"><input type="hidden" name="resizeform" id="resizeform" value="0">
-<input type="hidden" name="antispam-url" id="antispam-url-id" value="https://as.zoho.com/cf/checkurl.cf?URL=">
-<input type="hidden" name="referrerName" id="referrerName" value="null">
 
 <div id="zf_utmTrack" style="display: none;"></div><div elname="liveErrPageDiv" style="display: none"><div class="tyTemplateWidth"><div class="topContainer"></div><div class="centerContainer "><div class="tyTemplateWrapper"><div class="infoWrapper"><div class="infoContainer"><span class="alignCenter infoCont thankyouMsgText"> <span style="display: none;" tabindex="0" role="alert" elname="errMsg"></span> </span></div></div></div></div></div></div> 
 <div class="backgroundBg bgWrapper imgCenter stretch" style="background-image:url('https://forms.zohopublic.com/emailsspamm101gm1/downloadlogoperma?filepath=/formtemplates/zf-customthemes-zf/1723198749648_.jpg');"></div>
@@ -638,3 +631,86 @@
 
 	<!-- Disable field Lock icon end -->
 </svg>
+<script>
+    // Example validation functions
+
+  function validateRequired(input) {
+    if (input.value.trim() === "") {
+      return i18n.entervalue;
+    }
+    return null;
+  }
+
+  function validateNumber(input) {
+    if (!input.value || isNaN(input.value)) {
+      return i18n.entervaluenumber;
+    }
+    return null;
+  }
+
+  function validateSelect(input) {
+    if (input.value === "-Select-" || input.value === "") {
+      return i18n.selectchoice;
+    }
+    return null;
+  }
+
+  function validateMinLength(input, minLength) {
+    if (input.value.length < minLength) {
+      return i18n.minonecharlimit;
+    }
+    return null;
+  }
+
+  function validateMaxLength(input, maxLength) {
+    if (input.value.length > maxLength) {
+      return i18n.invalidChoiceLen;
+    }
+    return null;
+  }
+
+  function validateMinValue(input, minValue) {
+    if (parseFloat(input.value) < minValue) {
+      return i18n.minvalerror.replace("{0}", minValue);
+    }
+    return null;
+  }
+
+  function validateMaxValue(input, maxValue) {
+    if (parseFloat(input.value) > maxValue) {
+      return i18n.maxvalerror.replace("{0}", maxValue);
+    }
+    return null;
+  }
+
+  function validateMonthYear(input, minMonthYear, maxMonthYear) {
+    const [month, year] = input.value.split("-");
+    const currentMonthYear = new Date(year, month - 1);
+
+    if (currentMonthYear < minMonthYear) {
+      return i18n.minmonthyearlimit.replace("{0}", minMonthYear.toLocaleDateString());
+    } else if (currentMonthYear > maxMonthYear) {
+      return i18n.maxmonthyearlimit.replace("{0}", maxMonthYear.toLocaleDateString());
+    }
+    return null;
+  }
+
+  function validateCaptcha(input) {
+    if (!input.value || input.value === "") {
+      return i18n.captchaempty;
+    }
+    return null;
+  }
+
+  function displayError(input, message) {
+    const errorDiv = document.getElementById("error-Dropdown");
+    errorDiv.textContent = message;
+    errorDiv.style.display = message ? "block" : "none";
+  }
+
+  // Example usage:
+  const myInput = document.getElementById("Dropdown-arialabel"); // Example input
+  const errorMessage = validateSelect(myInput); // Validate if a choice is selected
+  displayError(myInput, errorMessage);
+</script>
+
