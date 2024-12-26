@@ -625,50 +625,6 @@ triggerFormResize();
 
 });</script>
 
-<div elname="popup" class="dim-div1 screenFreeze" id="screenFreezeDiv" style="display:none;"></div>
-<div elname="popup" class="dim-div1 screenFreeze" id="submitFreezeDiv" style="display:none;"></div>
-<div id="pleaseWait_Div" elname="popup" style="display: none;" class="darkdim-div"><div id="pleaseWait_DivCont" class="popUpOuter loaderWrapper ofLoaderWrap popup_type4"><div class="popUpInner"><div class="loaderCont"><div class="loader"><span class="loader--dot"></span> <span class="loader--dot"></span> <span class="loader--dot"></span> <span class="loader--dot"></span></div><p class="loader--text"> <span role="alert" aria-live="assertive">Submitting...</span> </p></div></div></div></div>
-<div id="plainLoading" elname="popup" style="display: none;" class="darkdim-div" role="alert" aria-live="assertive" aria-label="Loading..."><div id="plainLoadingCont" class="popUpOuter loaderWrapper ofLoaderWrap popup_type4"><div class="popUpInner"><div class="loaderCont"><div class="loader"><span class="loader--dot"></span> <span class="loader--dot"></span> <span class="loader--dot"></span> <span class="loader--dot"></span></div></div></div></div></div>
-<div id="splash_message_div" elname="popup" style="display: none;" class="dim-div splashMsgWrapper"><div id="splash_message_div_cont" class="splashMsgOuterCont"><span role="alert" aria-live="assertive" id="splash_msg_text" class="splashMsgCont"></span></div></div>
-<div id="infomsg-popup-div" style="display:none;" elname="popup" class="dim-div"><div class="popUpOuter sfLimtEntryWrap ofOuterPopupBg popup_type4" id="infomsg-popup-cont"><div class="popUpInner"><div class="popupHeader removeBdr ofPopCloseIcn" onclick="closeInfoPopUp()" aria-label="Close" role="button"><svg class="icon delete_icon">
-<use xlink:href="#icon-close"></use>
-</svg>
-<div class="clearBoth"></div></div><div class="popupMainCont messageCont"><p elname="infoMsg"></p></div></div></div></div>
-<div id="popupdiv" elname="popup" class="darkdim-div" style="display:none;"><div id="imageChoiceDiv-cont" class="imageTypeZoom PopImgPreviewAlign popup_type4"><div class="popUpInnerWrapper"><div class="ofPopCloseIcn ofPopupImageClose" elname="hideZoomedImage" role="button" aria-label="Close" onclick="ZFLive.hideZoomedImage();"><svg class="icon delete_icon">
-<use xlink:href="#icon-close"></use>
-</svg>
-<div class="clearBoth"></div></div><div class="popupMainCont_new"><img src="" style="display: none;">
-<audio aria-label="Recorded media" src="" controls="controls" style="display: none;"></audio> 
-<video aria-label="Recorded media" src="" controls="controls" style="display: none;"></video> 
-<p class="mediaPlayerErorMgs" elname="mediaPlayerError" style="display: none;color: white">This file format is not supported by your browser for preview.</p></div></div></div></div>
-<div id="iframe-media-popupdiv" elname="popup" class="darkdim-div pScroll" style="display:none;"><div id="iframe-imageChoiceDiv-cont" class="imageTypeZoom iframePopImgPreviewAlign popup_type4"><div class="iframePopUpInnerWrapper" elname="popUpInnerWrapper"><div elname="popupCloseBtn" class="ofPopCloseIcn ofPopupImageClose" role="button" aria-label="Close" onclick="ZFLive.hideZoomedImage_iframe();"><svg class="icon delete_icon">
-<use xlink:href="#icon-close"></use>
-</svg>
-<div class="clearBoth"></div></div><div elname="popupCont" class="iframePopupMainCont_new"><img src="" style="display: none;">
-<audio aria-label="Recorded media" src="" controls="controls" style="display: none;"></audio> 
-<video aria-label="Recorded media" src="" controls="controls" style="display: none;"></video> 
-<p class="mediaPlayerErorMgs" elname="mediaPlayerError" style="display: none;color: white">This file format is not supported by your browser for preview.</p></div></div></div></div>
-<div id="settingsErr-div" class="dim-div" style="display:none;" elname="popup"><div class="popUpOuter ofOuterPopupBg alertPop_Default nsPopupWidth460 popup_type4" id="settingsErr-div-cont"><div class="popUpInner ofErrorPopupDiv" role="dialog" aria-modal="true" aria-label="Error info">
-<div role="button" aria-label="Close" class="popupHeader removeBdr ofPopCloseIcn" onclick="closeErrorPopup();"><svg class="icon delete_icon">
-<use xlink:href="#icon-close"></use>
-</svg>
-<div class="clearBoth"></div></div><div class="popupMainCont"><div class="popUpFields"><label id="popHeader"></label>
-<div id="msgBody" class="popAlertTxt"></div></div></div><div class="popupTemFot" style="text-align: center"><a href="javascript:;" onclick="closeErrorPopup();" role="button" class="pop_Okaybtn">OK</a></div></div></div></div>
-<div id="unverifiedmail-div" class="dim-div" style="display:none;" elname="popup"><div class="popUpOuter ofUnverifiedpop ofOuterPopupBg nsPopupWidth460 popup_type4" id="unverifiedmail-div-cont"><div class="popUpInner ofErrorPopupDiv notAllowdPop"><div class="popupHeader removeBdr ofPopCloseIcn" onclick="closeResendMailPopup();"><svg class="icon delete_icon">
-<use xlink:href="#icon-close"></use>
-</svg>
-<div class="clearBoth"></div></div><div class="popupMainCont"><div class="popUpFields"><span class="icon_warning"> <svg class="icon"><use xlink:href="#icon-warning"></use></svg> </span><label id="popHeader">Submission Not Allowed</label>
-<div id="msgBody" class="popAlertTxt">You need to verify your email address to submit form</div></div></div><div class="popupTemFot" style="text-align: center"><button id="nareceivemail" class="notAllowfootBtn recieVEmail" onclick="ZFUtil.resendMail('0');">Send Verification Email</button>
-<button id="naprocessing" class="notAllowfootBtn" style="display: none;">Sending Email
-<div class="lodingAnimateWrap"><div class="lodingAnimateDiv loading_Div_1"></div><div class="lodingAnimateDiv loading_Div_2"></div><div class="lodingAnimateDiv loading_Div_3"></div></div></button>
-<button id="nasentmail" class="notAllowfootBtn sentVEmail" style="display: none;"><span><svg class="icon icon-Approved-Rules"><use xlink:href="#icon-tick"></use></svg></span>Email Sent</button></div></div></div></div>
-<div id="cacelSubmitErr-div" class="dim-div" style="display:none;" elname="popup"><div class="popUpOuter cancelSubmitPopup nsPopupWidth460 ofErrorPopupDiv ofOuterPopupBg popup_type4" id="cacelSubmitErr-div-cont" role="dialog" aria-modal="true" aria-label="Error info">
-<div class="popUpInner"><div class="popupHeader removeBdr"><a role="button" aria-label="Close" href="javascript:;" onclick="closeCancelSubmitErrorPopup();" class="closePopup flRight">
-<svg class="icon delete_icon"><use xlink:href="#icon-close"></use></svg>
-</a>
-<div class="clearBoth"></div></div><div class="popupMainCont"><div class="popUpFields"><div id="cancelSubmitMsgBody"></div></div></div><div class="popupTemFot" style="text-align: center"><a href="javascript:;" role="button" onclick="closeCancelSubmitErrorPopup();" class="pop_Okaybtn">OK</a></div></div></div></div>
-
-
 
 
 <script>
