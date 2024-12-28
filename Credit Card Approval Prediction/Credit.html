@@ -126,35 +126,63 @@
   </div>
 </div>
 
-
-<div elname="livefield-elem" reltype="parent" id="Number-li" fldtype="3" comptype="3" compname="Number" linkname="Number" needdata="true" mandatory="true" class="fieldWrapper" style="" page_no="1" page_link_name="Page" showlabel="true" unit_position="2" isvisible="true" seqno="3" counteruid="" need_reconf="false"><div class="fieldContainer  zf-large "><div class="zfLabelDiv ">
-<label class="fieldlabel" for="Number-arialabel">
-<span class="fieldLabelTxt ">Number of Childern</span> 
-<span class="sr-only"></span> 
-<em class="important" aria-label="Required">
-*
-</em>
-
-</label>
+<div elname="livefield-elem" reltype="parent" id="Number-li" fldtype="3" comptype="3" compname="Number" linkname="Number" needdata="true" mandatory="true" class="fieldWrapper" page_no="1" page_link_name="Page" showlabel="true" unit_position="2" isvisible="true" seqno="3" counteruid="" need_reconf="false">
+  <div class="fieldContainer zf-large">
+    <div class="zfLabelDiv">
+      <label class="fieldlabel" for="Number-arialabel">
+        <span class="fieldLabelTxt">Number of Children</span>
+        <em class="important" aria-label="Required">*</em>
+      </label>
+    </div>
+    <div elname="zfFieldDiv" class="zfFieldDiv_cont" incwebhk_name="fieldContentDiv">
+      <div class="fieldtypeText fieldNumber ofIconCont">
+        <div class="unitPosFix">
+          <input 
+            type="number" 
+            id="Number-arialabel" 
+            aria-describedby="hint-Number error-Number" 
+            class="fieldtext" 
+            tabindex="0" 
+            onfocusout="ZFLive.validateFieldConstraint(this);" 
+            onblur="removeNumberInvalidKeys(this);" 
+            onchange="removeNumberInvalidKeys(this);" 
+            onkeydown="setPreviousValForOnInputValidation(this);" 
+            oninput="validateValOnInput(this);" 
+            autocomplete="off" 
+            ui_type="textbox" 
+            maxlength="18" 
+            name="Number" 
+            placeholder="Enter the number of your Children" 
+            pattern="[0-9]*" 
+            min="0"
+          >
+          <svg class="icon icon-Number_New-01-1" aria-hidden="true">
+            <use xlink:href="#icon-Number_New-01-1"></use>
+          </svg>
+          <em elname="clearInputBtn" class="inputClearDiv" onmousedown="clearInput(this)" aria-hidden="true">
+            <svg class="icon delete_icon">
+              <use xlink:href="#icon-close"></use>
+            </svg>
+          </em>
+          <span class="fldDisabledIcn">
+            <svg class="icon icon-lock">
+              <use xlink:href="#icon-lock"></use>
+            </svg>
+          </span>
+          <span class="focus-border"></span>
+          <div elname="inpCaret" class="inputCaretSet"></div>
+        </div>
+        <span class="zfSymbol" name="field_unit_after" elname="field_unit_span" aria-hidden="true"></span>
+      </div>
+      <div class="zfErrorParentDiv">
+        <div id="error-Number" elname="error" class="zfErrorDiv" style="display:none" name="errDiv"></div>
+      </div>
+      <div class="zfErrorParentDiv">
+        <div id="error-Number-reconf" elname="reconf-error" class="zfErrorDiv" style="display:none" name="reconfErrDiv"></div>
+      </div>
+    </div>
+  </div>
 </div>
-<div elname="zfFieldDiv" class="zfFieldDiv_cont" incwebhk_name="fieldContentDiv"><div class="fieldtypeText fieldNumber  ofIconCont ">
-<div class="unitPosFix">
-<input type="number" id="Number-arialabel" aria-describedby="hint-Number error-Number" class="fieldtext" tabindex="0" onfocusout="ZFLive.validateFieldConstraint(this);" onblur="removeNumberInvalidKeys(this);" onchange="removeNumberInvalidKeys(this);" onkeydown="setPreviousValForOnInputValidation(this);" oninput="validateValOnInput(this);" autocomplete="off" ui_type="textbox" maxlength="18" name="Number" placeholder="Enter the number of you Children" pattern="[0-9]*" min="0"><svg class="icon icon-Number_New-01-1" aria-hidden="true">
-<use xlink:href="#icon-Number_New-01-1"></use>
-</svg>
-
-
-<em elname="clearInputBtn" class="inputClearDiv" onmousedown="clearInput(this)" aria-hidden="true">
-<svg class="icon delete_icon">
-<use xlink:href="#icon-close"></use>
-</svg>
-</em>
-
-<span class="fldDisabledIcn"> <svg class="icon icon-lock">
-<use xlink:href="#icon-lock"></use>
-</svg> </span><span class="focus-border"></span> <div elname="inpCaret" class="inputCaretSet"></div></div>
-<span class="zfSymbol" name="field_unit_after" elname="field_unit_span" aria-hidden="true">  </span></div>
-<div class="zfErrorParentDiv"><div id="error-Number" elname="error" class="zfErrorDiv" style="display:none" name="errDiv"></div></div><div class="zfErrorParentDiv"><div id="error-Number-reconf" elname="reconf-error" class="zfErrorDiv" style="display:none" name="reconfErrDiv"></div></div></div></div></div> 
 
 
 <div elname="livefield-elem" reltype="parent" id="Number2-li" fldtype="3" comptype="3" compname="Number2" linkname="Number2" needdata="true" mandatory="true" class="fieldWrapper" style="" page_no="1" page_link_name="Page" showlabel="true" unit_position="2" isvisible="true" seqno="4" counteruid="" need_reconf="false"><div class="fieldContainer  zf-large "><div class="zfLabelDiv ">
