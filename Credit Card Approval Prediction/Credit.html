@@ -640,60 +640,125 @@
 </div>
 
 
-<div elname="livefield-elem" reltype="parent" id="Date-li" fldtype="5" comptype="5" compname="Date" linkname="Date" needdata="true" mandatory="true" class="fieldWrapper" style="" page_no="1" page_link_name="Page" showlabel="true" disableddays="{}" startoftheweek="0" isvisible="true" seqno="9" counteruid=""><div class="fieldContainer  date "><div class="zfLabelDiv ">
-<label class="fieldlabel" id="Date-arialabel">
-<span class="fieldLabelTxt ">Day of birth</span> 
-<em class="important" aria-label="Required">
-*
-</em>
-
-</label>
+<div elname="livefield-elem" reltype="parent" id="Date-li" fldtype="5" comptype="5" compname="Date" linkname="Date" needdata="true" mandatory="true" class="fieldWrapper" isvisible="true" seqno="9">
+  <div class="fieldContainer date">
+    <div class="zfLabelDiv">
+      <label class="fieldlabel" id="Date-arialabel">
+        <span class="fieldLabelTxt">Day of birth</span>
+        <em class="important" aria-label="Required">*</em>
+      </label>
+    </div>
+    <div elname="zfFieldDiv" class="zfFieldDiv_cont">
+      <div class="fieldtypeText ofIconCont" datelocale="en-GB" elname="dd-M-yy" id="DatedateDiv">
+        <div class="zfDateWrapper">
+          <input
+            aria-labelledby="Date-arialabel"
+            aria-describedby="hint-Date error-Date Date-subInfoText"
+            aria-haspopup="dialog"
+            class="fieldtext hasDatepicker"
+            tabindex="0"
+            autocomplete="off"
+            type="text"
+            ui_type="textbox"
+            maxlength="255"
+            name="Date"
+            elname="date"
+            id="Date-date"
+            onchange="ZFLive.validateFieldConstraint(this);"
+            onfocusout="checkDatePicker(this);"
+            onclick="ZFUtil.showLiveDatePicker(this)"
+            onfocus="ZFUtil.showLiveDatePicker(this)"
+            placeholder="Choose your birth date"
+          />
+          <div class="calIconWrapper" elname="imgWrapDiv" onclick="childElementInputClick(this);">
+            <span class="icon-calendar"></span>
+            <img class="calendarIcon" src="" title="...">
+          </div>
+          <svg class="icon icon-Date" onclick="childElementInputClick(this)" aria-hidden="true">
+            <use xlink:href="#icon-Date"></use>
+          </svg>
+          <em elname="clearInputBtn" class="inputClearDiv" onmousedown="clearInput(this)" aria-hidden="true">
+            <svg class="icon delete_icon">
+              <use xlink:href="#icon-close"></use>
+            </svg>
+          </em>
+          <span class="fldDisabledIcn">
+            <svg class="icon icon-lock">
+              <use xlink:href="#icon-lock"></use>
+            </svg>
+          </span>
+          <span class="focus-border"></span>
+          <div elname="inpCaret" class="inputCaretSet"></div>
+          <div class="clearBoth"></div>
+        </div>
+        <label class="formSubInfoText" elname="formSubInfoText" id="Date-subInfoText">dd-MMM-yyyy</label>
+      </div>
+      <div class="zfErrorParentDiv">
+        <div id="error-Date" elname="error" class="zfErrorDiv" style="display:none"></div>
+      </div>
+    </div>
+  </div>
 </div>
-<div elname="zfFieldDiv" class="zfFieldDiv_cont"><div class="fieldtypeText  ofIconCont" datelocale="en-GB" elname="dd-M-yy" id="DatedateDiv" isdisable="false"><div class="zfDateWrapper">
-<input aria-labelledby="Date-arialabel" aria-describedby="hint-Date error-Date Date-subInfoText" aria-haspopup="dialog" class="fieldtext hasDatepicker" tabindex="0" autocomplete="off" type="text" ui_type="textbox" maxlength="255" name="Date" elname="date" id="Date-date" onchange="ZFLive.validateFieldConstraint(this);" onfocusout="checkDatePicker(this);" onclick="ZFUtil.showLiveDatePicker(this)" onfocus="ZFUtil.showLiveDatePicker(this)" placeholder="Choose your birth date"><div class="calIconWrapper" elname="imgWrapDiv" onclick="childElementInputClick(this);"><span class="icon-calendar"></span><img class="calendarIcon" src="" title="..."></div><svg class="icon icon-Date" onclick="childElementInputClick(this)" aria-hidden="true">
-<use xlink:href="#icon-Date"></use>
-</svg>
 
-<em elname="clearInputBtn" class="inputClearDiv" onmousedown="clearInput(this)" aria-hidden="true">
-<svg class="icon delete_icon">
-<use xlink:href="#icon-close"></use>
-</svg>
-</em>
-
-<span class="fldDisabledIcn"> <svg class="icon icon-lock">
-<use xlink:href="#icon-lock"></use>
-</svg> </span><span class="focus-border"></span> <div elname="inpCaret" class="inputCaretSet"></div><div class="clearBoth"></div></div>
-<label class="formSubInfoText" elname="formSubInfoText" id="Date-subInfoText">dd-MMM-yyyy</label>
+<div elname="livefield-elem" reltype="parent" id="Date1-li" fldtype="5" comptype="5" compname="Date1" linkname="Date1" needdata="true" mandatory="true" class="fieldWrapper" isvisible="true" seqno="10">
+  <div class="fieldContainer date">
+    <div class="zfLabelDiv">
+      <label class="fieldlabel" id="Date1-arialabel">
+        <span class="fieldLabelTxt">Days of Employment</span>
+        <em class="important" aria-label="Required">*</em>
+      </label>
+    </div>
+    <div elname="zfFieldDiv" class="zfFieldDiv_cont">
+      <div class="fieldtypeText ofIconCont" datelocale="en-GB" elname="dd-M-yy" id="Date1dateDiv">
+        <div class="zfDateWrapper">
+          <input
+            aria-labelledby="Date1-arialabel"
+            aria-describedby="hint-Date1 error-Date1 Date1-subInfoText"
+            aria-haspopup="dialog"
+            class="fieldtext hasDatepicker"
+            tabindex="0"
+            autocomplete="off"
+            type="text"
+            ui_type="textbox"
+            maxlength="255"
+            name="Date1"
+            elname="date"
+            id="Date1-date"
+            onchange="ZFLive.validateFieldConstraint(this);"
+            onfocusout="checkDatePicker(this);"
+            onclick="ZFUtil.showLiveDatePicker(this)"
+            onfocus="ZFUtil.showLiveDatePicker(this)"
+            placeholder=""
+          />
+          <div class="calIconWrapper" elname="imgWrapDiv" onclick="childElementInputClick(this);">
+            <span class="icon-calendar"></span>
+            <img class="calendarIcon" src="" title="...">
+          </div>
+          <svg class="icon icon-Date" onclick="childElementInputClick(this)" aria-hidden="true">
+            <use xlink:href="#icon-Date"></use>
+          </svg>
+          <em elname="clearInputBtn" class="inputClearDiv" onmousedown="clearInput(this)" aria-hidden="true">
+            <svg class="icon delete_icon">
+              <use xlink:href="#icon-close"></use>
+            </svg>
+          </em>
+          <span class="fldDisabledIcn">
+            <svg class="icon icon-lock">
+              <use xlink:href="#icon-lock"></use>
+            </svg>
+          </span>
+          <span class="focus-border"></span>
+          <div elname="inpCaret" class="inputCaretSet"></div>
+          <div class="clearBoth"></div>
+        </div>
+        <label class="formSubInfoText" elname="formSubInfoText" id="Date1-subInfoText">dd-MMM-yyyy</label>
+      </div>
+      <div class="zfErrorParentDiv">
+        <div id="error-Date1" elname="error" class="zfErrorDiv" style="display:none"></div>
+      </div>
+    </div>
+  </div>
 </div>
-<div class="zfErrorParentDiv"><div id="error-Date" elname="error" class="zfErrorDiv" style="display:none" name="errDiv"></div></div></div></div></div>
-
-
-<div elname="livefield-elem" reltype="parent" id="Date1-li" fldtype="5" comptype="5" compname="Date1" linkname="Date1" needdata="true" mandatory="true" class="fieldWrapper" style="" page_no="1" page_link_name="Page" showlabel="true" disableddays="{}" startoftheweek="0" isvisible="true" seqno="10" counteruid=""><div class="fieldContainer  date "><div class="zfLabelDiv ">
-<label class="fieldlabel" id="Date1-arialabel">
-<span class="fieldLabelTxt ">Days of Employment</span> 
-<em class="important" aria-label="Required">
-*
-</em>
-
-</label>
-</div>
-<div elname="zfFieldDiv" class="zfFieldDiv_cont"><div class="fieldtypeText  ofIconCont" datelocale="en-GB" elname="dd-M-yy" id="Date1dateDiv" isdisable="false"><div class="zfDateWrapper">
-<input aria-labelledby="Date1-arialabel" aria-describedby="hint-Date1 error-Date1 Date1-subInfoText" aria-haspopup="dialog" class="fieldtext hasDatepicker" tabindex="0" autocomplete="off" type="text" ui_type="textbox" maxlength="255" name="Date1" elname="date" id="Date1-date" onchange="ZFLive.validateFieldConstraint(this);" onfocusout="checkDatePicker(this);" onclick="ZFUtil.showLiveDatePicker(this)" onfocus="ZFUtil.showLiveDatePicker(this)" placeholder=""><div class="calIconWrapper" elname="imgWrapDiv" onclick="childElementInputClick(this);"><span class="icon-calendar"></span><img class="calendarIcon" src="" title="..."></div><svg class="icon icon-Date" onclick="childElementInputClick(this)" aria-hidden="true">
-<use xlink:href="#icon-Date"></use>
-</svg>
-
-<em elname="clearInputBtn" class="inputClearDiv" onmousedown="clearInput(this)" aria-hidden="true">
-<svg class="icon delete_icon">
-<use xlink:href="#icon-close"></use>
-</svg>
-</em>
-
-<span class="fldDisabledIcn"> <svg class="icon icon-lock">
-<use xlink:href="#icon-lock"></use>
-</svg> </span><span class="focus-border"></span> <div elname="inpCaret" class="inputCaretSet"></div><div class="clearBoth"></div></div>
-<label class="formSubInfoText" elname="formSubInfoText" id="Date1-subInfoText">dd-MMM-yyyy</label>
-</div>
-<div class="zfErrorParentDiv"><div id="error-Date1" elname="error" class="zfErrorDiv" style="display:none" name="errDiv"></div></div></div></div></div>
 
 <div elname="livefield-elem" reltype="parent" id="Dropdown-li" fldtype="12" comptype="12" compname="Dropdown" linkname="Dropdown" needdata="true" mandatory="true" class="fieldWrapper" style="" page_no="1" page_link_name="Page" showlabel="true" isvisible="true" seqno="15" counteruid="">
     <div class="fieldContainer zf-large" elname="fieldContainer">
