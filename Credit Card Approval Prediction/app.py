@@ -17,49 +17,37 @@ def index():
 
 @app.route('/predict', methods=['POST'])
 def predict():
-    # Collect data from the form
-    gender = request.form.get('gender')
-    owns_car = request.form.get('owns_car')
-    number_of_children = int(request.form.get('number_of_children'))
-    total_income = float(request.form.get('total_income'))
-    income_type = request.form.get('income_type')
-    education_type = request.form.get('education_type')
-    family_status = request.form.get('family_status')
-    housing_type = request.form.get('housing_type')
-    day_of_birth = int(request.form.get('day_of_birth'))
-    days_of_employment = int(request.form.get('days_of_employment'))
-    occupation_type = request.form.get('occupation_type')
-    family_member_number = int(request.form.get('family_member_number'))
-
-    # Create a DataFrame from the form input
-    input_data = pd.DataFrame({
-        'CODE_GENDER': [gender],
-        'FLAG_OWN_CAR': [owns_car],
-        'CNT_CHILDREN': [number_of_children],
-        'TOTAL_INCOME': [total_income],
-        'NAME_INCOME_TYPE': [income_type],
-        'NAME_EDUCATION_TYPE': [education_type],
-        'NAME_FAMILY_STATUS': [family_status],
-        'NAME_HOUSING_TYPE': [housing_type],
-        'DAYS_BIRTH': [-day_of_birth],
-        'DAYS_EMPLOYED': [-days_of_employment],
-        'OCCUPATION_TYPE': [occupation_type],
-        'CNT_FAM_MEMBERS': [family_member_number]
-    })
-
-    # Preprocessing: Apply binary encoding
-    input_data = binary_encoder.transform(input_data)
-
-    # Scale numeric columns
-    input_data[['TOTAL_INCOME', 'DAYS_BIRTH', 'DAYS_EMPLOYED']] = scaler.transform(
-        input_data[['TOTAL_INCOME', 'DAYS_BIRTH', 'DAYS_EMPLOYED']]
-    )
-
-    # Make prediction using the pre-trained model
-    prediction = mlp_model.predict(input_data)
-
-    # Return the prediction result as JSON
-    return jsonify({'prediction': prediction[0]})
+    try:
+        # Parse JSON data
+        data = request.get_json()
+        
+        # Prepare the input for prediction
+        input_data = pd.DataFrame([{
+            "Gender": data["Radio"],
+            "Owns Car": data["Radio1"],
+            "Children": int(data["Number"]),
+            "Income": float(data["Number2"]),
+            "Work Status": data["Radio2"],
+            "Education": data["Radio3"],
+            "Marital Status": data["Radio4"],
+            "Housing": data["Radio5"],
+            "Birth Year": int(data["Date"]),
+            "Application Year": int(data["Date1"]),
+            "Occupation": data["Dropdown"],
+            "Family Members": int(data["Number3"]),
+        }])
+        
+        # Apply encoding and scaling
+        input_encoded = binary_encoder.transform(input_data)
+        input_scaled = scaler.transform(input_encoded)
+        
+        # Make prediction
+        prediction = mlp_model.predict(input_scaled)[0]
+        
+        # Return the prediction
+        return jsonify({"mlp_prediction": prediction})
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
 
 if __name__ == '__main__':
     app.run(debug=True)
