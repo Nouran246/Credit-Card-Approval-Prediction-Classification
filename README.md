@@ -1,110 +1,91 @@
 # Credit Card Approval Prediction (Classification Project)
-**Authors**
 
+**Authors:**
 - [@Nouran Hassan](https://github.com/Nouran246)
 - [@Roaa Khaled](https://github.com/Rowlkh)
 - [@Malak Mohamed](https://github.com/MalakMohameed)
 - [@Yahia-Elshobokshy](https://github.com/Yahia-Elshobokshy)
 
-**About the Dataset:**
-Credit score cards are a common risk control method in the financial industry. It uses personal information and data submitted by credit card applicants to predict the probability of future defaults and credit card borrowings. The bank is able to decide whether to issue a credit card to the applicant. Credit scores can objectively quantify the magnitude of risk.
-Your goal is to predict the credit card score status based on the applicant’s information.
+## About the Dataset:
+Credit score cards are a common risk control method in the financial industry. They use personal information and data submitted by credit card applicants to predict the probability of future defaults and credit card borrowings. The bank uses this to decide whether to issue a credit card to the applicant. Credit scores objectively quantify the magnitude of risk.
 
-**Credit Scores to predict:**
+**Goal:**
+The goal of this project was to predict the credit card score status based on the applicant’s information, where the scores are mapped to either "Approved" or "Not Approved" based on certain criteria.
 
-'C': Likely denotes a "Credit Approved" status.
+**Credit Scores to Predict:**
+- `'C'`: "Credit Approved" status
+- `'X'`: "Accepted" or "Approved" status
+- `'0', '1', '2', '3', '4', '5'`: Levels of rejection, from minor to severe issues like insufficient credit history, high debt-to-income ratio, or bankruptcy.
 
-'X': Possibly stands for "Accepted" or "Approved." These statuses indicate that the application was successful, so they are grouped under the same category.
+### Mapping to Status:
+- `'C'`: Approved
+- `'X'`: Approved
+- `'0', '1', '2', '3', '4', '5'`: Not Approved
 
-'0', '1', '2', '3', '4', '5': These statuses could represent varying levels of rejection or issues with the application. For example:
+The two datasets, `credit_record` and `application_record`, were merged based on the common column `ID` to combine applicant details with credit scores.
 
-'0': Application not approved but no specific issue.
+---
 
-'1': Denial due to minor reasons, like insufficient credit history.
+## Project Deliverables:
+- A Python file with the complete implemented pipeline.
+- A report explaining each step and decision in detail.
 
-'2': More severe issues, like high debt-to-income ratio.
+---
 
-'3' to '5': Potentially escalating levels of rejection or other reasons like bankruptcy, delinquency, or fraud.
+## Key Steps in the Project:
 
- **You should Predict these classes and map the result to the following two status:**
+1. **Data Exploration and Statistical Analysis:**
+   - We performed an initial exploration of both `credit_record` and `application_record` datasets.
+   - Conducted sanity checks and determined the appropriate preprocessing techniques to ensure data quality.
+   - Performed exploratory data analysis (EDA) to understand the distribution of features and identify any outliers, missing values, or discrepancies.
 
-Approved
+2. **Preprocessing:**
+   - Checked for and handled any missing/null values in the datasets.
+   - Applied feature engineering where necessary, including creating new features or transforming existing ones to improve model performance.
+   - Dropped unnecessary columns that did not contribute to the prediction task.
+   - Checked for class imbalance and addressed it through techniques like oversampling or undersampling.
+   - Removed any duplicate records.
+   - Merged the two datasets (`credit_record` and `application_record`) based on the `ID` column.
+   - Applied label encoding to categorical features and performed feature scaling to ensure all features were on the same scale.
 
-Not Approved
+3. **Feature Selection Using Genetic Algorithms:**
+   - Implemented Genetic Algorithms for feature selection to choose the most relevant features for model training.
+   - The algorithm helped to determine which features contributed most to predicting the credit score status.
 
-**Here is the following mapping:** 
+4. **Splitting the Data:**
+   - Split the data into training (70%), validation (15%), and testing (15%) sets, ensuring that the data was well-distributed across the subsets for model training and evaluation.
 
-'C': 0, # Approved
+5. **Model Training:**
+   - We trained three classification models:
+     - **K-Nearest Neighbors (KNN)**
+     - **Decision Trees**
+     - **Multi-Layer Perceptron (MLP)**
+   - The models were trained using the selected features, and performance was evaluated using cross-validation on the validation set.
 
-'X': 0, # Approved
+6. **Hyperparameter Tuning:**
+   - Applied grid search to find the best hyperparameters for each model, tuning parameters such as the number of neighbors for KNN, the depth of decision trees, and the number of hidden layers for MLP.
+   - This allowed us to optimize the models for better performance.
 
-'0': 1, # Not Approved
+7. **Model Evaluation:**
+   - Once hyperparameter tuning was completed, the models were evaluated using accuracy as the primary evaluation metric.
+   - We found that the **Decision Trees** model performed the best in terms of accuracy, followed closely by **KNN**.
 
-'1': 1, # Not Approved
+---
 
-'2': 1, # Not Approved
+## Results:
 
-'3': 1, # Not Approved
+- **Best Model:** Decision Trees
+- **Evaluation Metric:** Accuracy
 
-'4': 1, # Not Approved
+---
 
-'5': 1 # Not Approved
-
-Notice that We have two datasets (“credit_record”/”application_record”) that will be merged into one. The common column between the two datasets is the ID so, We joined the two datasets by joining the application of a person with the credit score dataset based on the ID.
-
-**Deliverables:**
-● A Python file with your complete implemented pipeline.
-
-● Report explaining in details your work.
-
-**Project Requirements**
-1- Report: Report their Final work via a report that explains every step implemented.
-e.g., The Approached the problem with the assumption that features A, B,C affect the response variable the most … etc.
-
-2-Data Exploration and statistical analysis: Before applying ant preprocessing technique, explore the data first , apply sanity check and see what preprocessing techniques you want to apply for data cleaning. Apply EDA on (“credit_record”/”application_record”) before merging them.
-
-3- Preprocessing: Before building your models, you need to make sure that
-the dataset is clean and ready-to-use.
-
-**What we need to do about the data:**
-
-Check for null values
-
-Apply feature engineering
-
-Drop unnecessary columns
-
-Check for class imbalance
-
-Check for garbage values
-
-Check for duplicates
-
-Merge datasets
-
-Label Encoding
-
-Feature scaling
-
-**4-Feature Selection:**
-Apply Genetic Algorithms technique to select the most important features for your model.(Self Study)
-Use Genetic Algorithms for choosing the best features for decision trees model. The same features can be used for other models.
-
-**5- Splitting Data (Train / Validation/Testing):**
-
-Split your data into 70% train ,15% validation and 15% Testing.
-When applying feature selection using genetic algorithms, the fitness function is the accuracy on the model’s validation data.
-
-**6- Model Selection & training: You MUST train these classification**
-Models ( KNN-Decision Trees –MLP). You can optionally add any other model you want to implement.
-
-**7- Hyper-parameter tuning:**
-Apply grid-search or random search.
-
-**8- Model evaluation:**
-When you get the best parameters for each classifier, you should consider the “accuracy” evaluation metric for evaluating all the hyperparameter-tuned classifier’s performance. Mention which classifier gave the best performance.
+## Screenshots:
 ![Screenshot 2025-01-15 181348](https://github.com/user-attachments/assets/7d15ee8f-063d-4cf8-a31e-9dff6f1501d1)
 ![Screenshot 2025-01-15 181421](https://github.com/user-attachments/assets/1ecc4f79-ce5b-4583-b03e-c993688e2174)
 ![Screenshot 2025-01-15 181434](https://github.com/user-attachments/assets/67ec66f7-760e-4b16-8646-ea00211a895c)
 ![Screenshot 2025-01-15 181447](https://github.com/user-attachments/assets/fc89e4d9-0b19-4099-9373-6fe5eeb63074)
 
+---
+
+## Conclusion:
+The project was successful in predicting the credit card approval status by leveraging classification models like KNN, Decision Trees, and MLP. Feature selection using Genetic Algorithms helped in improving model performance, and hyperparameter tuning ensured the optimal settings for each classifier. The Decision Trees model emerged as the best performer, achieving the highest accuracy in predicting whether a credit card application would be approved or not.
